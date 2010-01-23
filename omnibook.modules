@@ -1,6 +1,0 @@
-#!/bin/sh
-
-if [ ! -d /sys/devices/platform/omnibook ]; then
-	modprobe omnibook
-fi
-
