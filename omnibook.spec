@@ -3,7 +3,7 @@
 Name:           omnibook
 
 Version:        2.20090714
-Release:        0.2.svn288%{?dist}
+Release:        0.3.svn288%{?dist}
 Summary:        Common files for omnibook-kmod
 
 Group:          System Environment/Kernel
@@ -16,6 +16,7 @@ Source0:        omnibook-%{version}.tar.xz
 %else
 Source0:        http://downloads.sourceforge.net/project/omnibook/omnibook%20kernel%20module/%{version}/omnibook-%{version}.tar.gz
 %endif
+Source1:        omnibook.modules
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 Provides:       %{name}-kmod-common = %{version}-%{release}
@@ -32,6 +33,7 @@ in the 'omke' project.
 echo nothing to build
 
 %install
+install -Dpm755 %{SOURCE1} %{buildroot}%{_sysconfdir}/sysconfig/modules/omnibook.modules
 
 %clean
 rm -rf %{buildroot}
@@ -39,8 +41,12 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root,-)
 %doc doc/*
+%{_sysconfdir}/sysconfig/modules/omnibook.modules
 
 %changelog
+* Sat Jan 23 2010 Dominik Mierzejewski <rpm@greysector.net> 2.20090714-0.3.svn288
+- autoload module
+
 * Mon Nov 16 2009 Dominik Mierzejewski <rpm@greysector.net> 2.20090714-0.2.svn288
 - rename to omnibook, provide -kmod-common
 - fix build
