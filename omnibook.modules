@@ -2,7 +2,5 @@
 
 if [ ! -d /sys/devices/platform/omnibook ]; then
 	modprobe omnibook
-else
-	echo omnibook already loaded
 fi
 

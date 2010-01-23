@@ -3,7 +3,7 @@
 Name:           omnibook
 
 Version:        2.20090714
-Release:        0.3.svn288%{?dist}
+Release:        0.4.svn288%{?dist}
 Summary:        Common files for omnibook-kmod
 
 Group:          System Environment/Kernel
@@ -44,7 +44,7 @@ rm -rf %{buildroot}
 %{_sysconfdir}/sysconfig/modules/omnibook.modules
 
 %changelog
-* Sat Jan 23 2010 Dominik Mierzejewski <rpm@greysector.net> 2.20090714-0.3.svn288
+* Sat Jan 23 2010 Dominik Mierzejewski <rpm@greysector.net> 2.20090714-0.4.svn288
 - autoload module
 
 * Mon Nov 16 2009 Dominik Mierzejewski <rpm@greysector.net> 2.20090714-0.2.svn288
